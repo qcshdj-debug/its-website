@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>科学研究 - 智行安全课题组</title>
+
+    <style>
+        /* ===================== 全局页面基础样式 ===================== */
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei";
+            background: #f2f2f2;
+        }
+
+        /* ===================== 顶部 Header 区域 ===================== */
+        header {
+            position: relative;
+            background: #0b3d91;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 30px 80px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "Intelligent Transportation Safety Research Group";
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            white-space: nowrap;
+            z-index: 0;
+        }
+
+        .logo {
+            height: 90px;
+            margin-right: 25px;
+            z-index: 1;
+        }
+
+        .header-text { z-index: 1; }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header-text .en {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .header-text .cn {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        /* ===================== 导航栏 ===================== */
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: #062c6b;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu li:hover {
+            background: #041f4a;
+        }
+        
+        /* 高亮当前页面导航 */
+        .menu li.active {
+            background: #041f4a;
+        }
+
+        /* ===================== 公共板块样式 ===================== */
+        .section {
+            background: white;
+            margin: 40px 80px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0b3d91;
+            font-size: 28px;
+        }
+
+        /* ===================== 研究板块样式 ===================== */
+        .research-detail {
+            margin-bottom: 50px;
+        }
+        
+        .research-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-detail h3 {
+            color: #062c6b;
+            font-size: 24px;
+            border-left: 5px solid #0b3d91;
+            padding-left: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .research-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .research-img {
+            width: 40%;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .research-text {
+            flex: 1;
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .research-text p {
+            margin: 0 0 15px 0;
+        }
+
+        .research-text ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .research-text li {
+            margin-bottom: 8px;
+        }
+
+        /* ===================== 页脚 ===================== */
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="image/banner4.jpg" class="logo">
+    <div class="header-text">
+        <h1>智行安全课题组</h1>
+        <div class="en">Intelligent Transportation Safety Research Group</div>
+        <div class="cn">西华大学 汽车与交通学院 道路交通安全团队</div>
+    </div>
+</header>
+
+<ul class="menu">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="research.html">科学研究</a></li>
+    <li><a href="practice.html">工程实践</a></li>
+    <li><a href="resource.html">平台资源</a></li>
+    <li><a href="team.html">团队成员</a></li>
+    <li><a href="join.html">加入我们</a></li>
+</ul>
+
+<!-- 研究板块标题 -->
+<div class="section">
+    <h2>科学研究</h2>
+
+<!-- 生成式人工智能和物理人工智能应用 -->
+    <div class="research-detail">
+        <h3>生成式人工智能和物理人工智能应用</h3>
+        <div class="research-content">
+            <img src="image/AI.gif" alt="" class="research-img">
+            <div class="research-text">
+                <p>本方向聚焦AI在事故调查及自动驾驶方向的应用，将不同AI应用于工作领域。</p>
+                <p><strong>核心研究内容：</strong></p>
+                <ul>
+                    <li>多模态端到端自动驾驶应用及鲁棒性测评技术</li>
+		    <li>基于多模态数据的自动驾驶对抗测试场景/长尾场景生成</li>
+		    <li>基于多模态行车数据的自动驾驶汽车行车安全风险实时识别与评估</li>
+                    <li>基于多模态生成式 AI 的交通事故多源证据整合与智能取证</li>
+		    <li>基于多模态数据的交通事故成因分析及报告生成</li>
+                </ul>
+                <p><strong>应用成果： 目前基于开源生成式 AI 与领域知识库构建，已成功开发AI标准分析平台，申请软著《司法鉴定质控智慧辅助系统V1.0》</strong></p>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- 事故调查与事故重建 -->
+    <div class="research-detail">
+        <h3>事故调查与事故重建</h3>
+        <div class="research-content">
+            <img src="image/accident1.gif" alt="事故调查与重建实验" class="research-img">
+            <div class="research-text">
+                <p>本方向聚焦道路交通事故，尤其是智能网联汽车事故的深度调查与精准重建，结合多源数据融合技术，建立科学、系统的事故分析重建方法。</p>
+                <p><strong>核心研究内容：</strong></p>
+                <ul>
+                    <li>事故现场勘查技术与数据采集方法优化</li>
+		    <li>基于车辆动力学的三维事故重建技术</li>
+                    <li>基于行车记录仪、EDR、TBOX等多源数据的事故重建分析</li>
+                    <li>智能网联汽车事故特征与致因分析</li>
+                    <li>交通事故数据库构建与大数据分析应用</li>
+                </ul>
+                <p><strong>应用成果： 相关研究成果获得四川省科技进步二等奖一项、研制国家标准三项《GB/T45415-2025 纯电动汽车火灾缺陷分析方法》、《GB/T45416-2025  碰撞事故车辆调查与安全缺陷分析指南》、《GB/T45417-2025  汽车再生制动功能缺陷分析指南》</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自动驾驶测试场景生成 -->
+    <div class="research-detail">
+        <h3>自动驾驶测试场景生成</h3>
+        <div class="research-content">
+            <img src="image/test2.gif" alt="自动驾驶测试场景" class="research-img">
+            <div class="research-text">
+                <p>针对自动驾驶系统测试覆盖性不足、极端场景缺失等问题，开展测试场景的生成、筛选与验证研究，构建高风险、高价值的测试场景库。</p>
+                <p><strong>核心研究内容：</strong></p>
+                <ul>
+                    <li>基于真实事故数据的危险场景提取与重构</li>
+                    <li>自动驾驶测试场景分类与分级标准研究</li>
+                    <li>基于机器学习的场景智能生成方法</li>
+                    <li>基于片段场景的连续场景组合生成方法</li>
+                    <li>测试场景的有效性验证方法</li>
+                </ul>
+                <p><strong>应用成果： 相关研究成果已应用于多家主机厂进行实车自动驾驶功能的研发测试，推动自动驾驶安全技术发展。</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自动驾驶安全测评 -->
+    <div class="research-detail">
+        <h3>自动驾驶安全测评</h3>
+        <div class="research-content">
+            <img src="image/test3.png" alt="自动驾驶安全测评" class="research-img">
+            <div class="research-text">
+                <p>围绕自动驾驶系统的安全性评价需求，建立多维度、可量化的安全测评体系，为自动驾驶技术落地应用提供科学的评价依据。</p>
+                <p><strong>核心研究内容：</strong></p>
+                <ul>
+                    <li>自动驾驶安全评价指标体系构建（含功能安全、预期功能安全）</li>
+                    <li>不同等级自动驾驶系统的安全测评方法</li>
+                    <li>基于场景的自动驾驶安全测评流程与规范</li>
+                    <li>自动驾驶人机交互安全性评价</li>
+                    <li>自动驾驶系统失效模式与安全风险评估</li>
+                </ul>
+                <p><strong>应用成果： 相关研究成果已在多家权威检测机构落地应用，支撑实车测试与安全评价工作；同时发表多篇SCI 论文，实现了工程实践与学术创新的双向赋能。</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Intelligent Transportation Safety Research Group
+</footer>
+
+</body>
+</html>

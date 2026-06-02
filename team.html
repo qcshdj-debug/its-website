@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>团队成员 - 智行安全课题组</title>
+
+    <style>
+        /* ===================== 全局页面基础样式（复用原有） ===================== */
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei";
+            background: #f2f2f2;
+        }
+
+        /* ===================== 顶部 Header 区域（复用原有） ===================== */
+        header {
+            position: relative;
+            background: #0b3d91;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 30px 80px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "Intelligent Transportation Safety Research Group";
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            white-space: nowrap;
+            z-index: 0;
+        }
+
+        .logo {
+            height: 90px;
+            margin-right: 25px;
+            z-index: 1;
+        }
+
+        .header-text { z-index: 1; }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header-text .en {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .header-text .cn {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        /* ===================== 导航栏（复用原有） ===================== */
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: #062c6b;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu li:hover {
+            background: #041f4a;
+        }
+
+        /* ===================== 团队成员核心样式 ===================== */
+        .team-section {
+            background: white;
+            margin: 40px 80px;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        /* 总标题 */
+        .team-section > h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #0b3d91;
+            font-size: 28px;
+        }
+
+        /* 毕业/在校大分类标题 */
+        .category-title {
+            font-size: 24px;
+            color: #062c6b;
+            margin: 0 0 30px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0b3d91;
+        }
+
+        /* 年级栏样式 */
+        .grade-column {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 25px;
+        }
+
+        .grade-column:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* 年级小标题 */
+        .grade-title {
+            font-size: 20px;
+            color: #0b3d91;
+            margin-bottom: 20px;
+            padding-left: 8px;
+            border-left: 3px solid #062c6b;
+        }
+
+        /* 成员卡片网格 */
+        .member-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: flex-start;
+        }
+
+        /* 成员卡片样式 */
+        .member-card {
+            width: 220px;
+            background: #f8f9fc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .member-card:hover {
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        /* 成员照片 */
+        .member-photo {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        /* 成员信息 */
+        .member-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #062c6b;
+            margin: 0 0 10px;
+        }
+
+        .member-research {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* 毕业/在校分类容器 */
+        .category-container {
+            margin-bottom: 60px;
+        }
+
+        .category-container:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===================== 页脚（复用原有） ===================== */
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="image/banner4.jpg" class="logo">
+    <div class="header-text">
+        <h1>智行安全课题组</h1>
+        <div class="en">Intelligent Transportation Safety Research Group</div>
+        <div class="cn">西华大学 汽车与交通学院 道路交通安全团队</div>
+    </div>
+</header>
+
+<ul class="menu">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="research.html">科学研究</a></li>
+    <li><a href="practice.html">工程实践</a></li>
+    <li><a href="resource.html">平台资源</a></li>
+    <li><a href="team.html">团队成员</a></li>
+    <li><a href="join.html">加入我们</a></li>
+</ul>
+
+
+<!-- 团队成员核心区域 -->
+<div class="team-section">
+    <h2>团队成员</h2>
+
+    <!-- 第一部分：已毕业研究生（按毕业去向分类） -->
+    <div class="category-container">
+        <h3 class="category-title">已毕业研究生</h3>
+
+        <!-- 1. 上市企业 -->
+        <div class="grade-column">
+            <h4 class="grade-title">上市企业</h4>
+            <div class="member-grid">
+                <div class="member-card">
+                    <img src="image/lf.jpg" class="member-photo" alt="刘峰">
+                    <h5 class="member-name">刘峰</h5>
+                    <p class="member-research">毕业去向：比亚迪</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/cyy.jpg" class="member-photo" alt="车瑶栎">
+                    <h5 class="member-name">车瑶栎</h5>
+                    <p class="member-research">毕业去向：纵横股份</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/ry.jpg" class="member-photo" alt="任耀">
+                    <h5 class="member-name">任耀</h5>
+                    <p class="member-research">毕业去向：小米汽车</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/xc.jpg" class="member-photo" alt="徐畅">
+                    <h5 class="member-name">徐畅</h5>
+                    <p class="member-research">毕业去向：长安汽车</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/zbw.jpg" class="member-photo" alt="赵博闻">
+                    <h5 class="member-name">赵博闻</h5>
+                    <p class="member-research">毕业去向：易方智慧</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. 央国企/事业单位 -->
+        <div class="grade-column">
+            <h4 class="grade-title">央国企/事业单位</h4>
+            <div class="member-grid">
+                <div class="member-card">
+                    <img src="image/zy.jpg" class="member-photo" alt="张友">
+                    <h5 class="member-name">张友</h5>
+                    <p class="member-research">毕业去向：中国汽车工程研究院股份有限公司</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/wmy.jpg" class="member-photo" alt="王咪杨">
+                    <h5 class="member-name">王咪杨</h5>
+                    <p class="member-research">毕业去向：自贡高新技术产业开发区管理委员会</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/zyj.jpg" class="member-photo" alt="周怡君">
+                    <h5 class="member-name">周怡君</h5>
+                    <p class="member-research">毕业去向：四川电信</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/tm.jpg" class="member-photo" alt="唐梅">
+                    <h5 class="member-name">唐梅</h5>
+                    <p class="member-research">毕业去向：四川工程职业技术大学</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/hyq.jpg" class="member-photo" alt="侯彦巧">
+                    <h5 class="member-name">侯彦巧</h5>
+                    <p class="member-research">毕业去向：成都农业科技职业学院</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/gl.jpg" class="member-photo" alt="高立">
+                    <h5 class="member-name">高立</h5>
+                    <p class="member-research">毕业去向：四川交通职业技术学院</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/jsy.jpg" class="member-photo" alt="金思雨">
+                    <h5 class="member-name">金思雨</h5>
+                    <p class="member-research">毕业去向：四川交通职业技术学院</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/yh.jpg" class="member-photo" alt="杨鸿">
+                    <h5 class="member-name">杨鸿</h5>
+                    <p class="member-research">毕业去向：四川省邻水县职业中学</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. 高校 -->
+        <div class="grade-column">
+            <h4 class="grade-title">高校及其他</h4>
+            <div class="member-grid">
+                <div class="member-card">
+                    <img src="image/mjs.jpg" class="member-photo" alt="米俊松">
+                    <h5 class="member-name">米俊松</h5>
+                    <p class="member-research">毕业去向：重庆移通学院</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/lh.jpg" class="member-photo" alt="李贺">
+                    <h5 class="member-name">李贺</h5>
+                    <p class="member-research">毕业去向：吉利学院</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/mxj.jpg" class="member-photo" alt="牟小军">
+                    <h5 class="member-name">牟小军</h5>
+                    <p class="member-research">毕业去向：西华大学</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/xh.jpg" class="member-photo" alt="徐浩">
+                    <h5 class="member-name">徐浩</h5>
+                    <p class="member-research">毕业去向：*密单位</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/wq.jpg" class="member-photo" alt="王茜">
+                    <h5 class="member-name">王茜</h5>
+                    <p class="member-research">毕业去向：*密单位</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/wys.jpg" class="member-photo" alt="文岩松">
+                    <h5 class="member-name">文岩松</h5>
+                    <p class="member-research">毕业去向：*密单位</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二部分：在校研究生（2023级及以后，保留原结构） -->
+    <div class="category-container">
+        <h3 class="category-title">在校研究生</h3>
+
+        <!-- 2023级 -->
+        <div class="grade-column">
+            <h4 class="grade-title">2023级</h4>
+            <div class="member-grid">
+                <div class="member-card">
+                    <img src="image/cl.jpg" class="member-photo" alt="崔磊">
+                    <h5 class="member-name">崔磊</h5>
+                    <p class="member-research">研究方向：目标物识别</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/zl.jpg" class="member-photo" alt="赵亮">
+                    <h5 class="member-name">赵亮</h5>
+                    <p class="member-research">研究方向：自动驾驶算法测评</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/zxy.jpg" class="member-photo" alt="朱欣宇">
+                    <h5 class="member-name">朱欣宇</h5>
+                    <p class="member-research">研究方向：自动驾驶场景生成</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2024级 -->
+        <div class="grade-column">
+            <h4 class="grade-title">2024级</h4>
+            <div class="member-grid">
+                <div class="member-card">
+                    <img src="image/qjh.jpg" class="member-photo" alt="漆俊豪">
+                    <h5 class="member-name">漆俊豪</h5>
+                    <p class="member-research">研究方向：3DGS场景生成</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/zml.jpg" class="member-photo" alt="周美伶">
+                    <h5 class="member-name">周美伶</h5>
+                    <p class="member-research">研究方向：驾驶人接管效能评估</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/lr.jpg" class="member-photo" alt="刘锐">
+                    <h5 class="member-name">刘锐</h5>
+                    <p class="member-research">研究方向：自动驾驶行车安全评估</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/tjx.jpg" class="member-photo" alt="唐佳兴">
+                    <h5 class="member-name">唐佳兴</h5>
+                    <p class="member-research">研究方向：连续测试场景生成</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/tjq.jpg" class="member-photo" alt="唐嘉倩">
+                    <h5 class="member-name">唐嘉倩</h5>
+                    <p class="member-research">研究方向：自动驾驶行车风险量化</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2025级 -->
+        <div class="grade-column">
+            <h4 class="grade-title">2025级</h4>
+            <div class="member-grid">
+                <div class="member-card">
+                    <img src="image/zlp.jpg" class="member-photo" alt="赵丽萍">
+                    <h5 class="member-name">赵丽萍</h5>
+                    <p class="member-research">研究方向：</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/wzy.jpg" class="member-photo" alt="王郅毅">
+                    <h5 class="member-name">王郅毅</h5>
+                    <p class="member-research">研究方向：</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/chx.jpg" class="member-photo" alt="陈昊勋">
+                    <h5 class="member-name">陈昊勋</h5>
+                    <p class="member-research">研究方向：</p>
+                </div>
+                <div class="member-card">
+                    <img src="image/hjh.jpg" class="member-photo" alt="胡俊辉">
+                    <h5 class="member-name">胡俊辉</h5>
+                    <p class="member-research">研究方向：</p>
+                </div>
+		        <div class="member-card">
+                    <img src="image/dyy.jpg" class="member-photo" alt="丁杨益">
+                    <h5 class="member-name">丁杨益</h5>
+                    <p class="member-research">研究方向：</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Intelligent Transportation Safety Research Group
+</footer>
+
+</body>
+</html>

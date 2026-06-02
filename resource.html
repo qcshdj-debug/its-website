@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>团队建设 - 智行安全课题组</title>
+
+    <style>
+        /* ===================== 全局页面基础样式 ===================== */
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei";
+            background: #f2f2f2;
+        }
+
+        /* ===================== 顶部 Header 区域 ===================== */
+        header {
+            position: relative;
+            background: #0b3d91;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 30px 80px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "Intelligent Transportation Safety Research Group";
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            white-space: nowrap;
+            z-index: 0;
+        }
+
+        .logo {
+            height: 90px;
+            margin-right: 25px;
+            z-index: 1;
+        }
+
+        .header-text { z-index: 1; }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header-text .en {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .header-text .cn {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        /* ===================== 导航栏 ===================== */
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: #062c6b;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu li:hover {
+            background: #041f4a;
+        }
+        
+        /* 高亮当前页面导航 */
+        .menu li.active {
+            background: #041f4a;
+        }
+
+        /* ===================== 公共板块样式 ===================== */
+        .section {
+            background: white;
+            margin: 40px 80px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0b3d91;
+            font-size: 28px;
+        }
+
+        /* ===================== 资源板块通用样式 ===================== */
+        .resource-module {
+            margin-bottom: 60px;
+        }
+        
+        .resource-module:last-child {
+            margin-bottom: 0;
+        }
+
+        .resource-module h3 {
+            color: #062c6b;
+            font-size: 24px;
+            border-left: 5px solid #0b3d91;
+            padding-left: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .module-desc {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* ===================== 平台资源（左右布局） ===================== */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .platform-item {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* 平台图片高度：从250px → 320px */
+        .platform-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .platform-text {
+            line-height: 1.7;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .platform-text h4 {
+            color: #062c6b;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        /* ===================== 多图片网格布局（3张/2张） ===================== */
+        .resource-img-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        /* 3列布局（学术会议、学科竞赛） */
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* 3列布局（实习机会） */
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .img-item {
+            text-align: center;
+        }
+
+        /* 网格图片高度：从220px → 280px */
+        .resource-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .resource-img:hover {
+            transform: translateY(-5px);
+        }
+
+        .img-caption {
+            margin-top: 12px;
+            font-size: 15px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* ===================== 页脚 ===================== */
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="image/banner4.jpg" class="logo">
+    <div class="header-text">
+        <h1>智行安全课题组</h1>
+        <div class="en">Intelligent Transportation Safety Research Group</div>
+        <div class="cn">西华大学 汽车与交通学院 道路交通安全团队</div>
+    </div>
+</header>
+
+<ul class="menu">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="research.html">科学研究</a></li>
+    <li><a href="practice.html">工程实践</a></li>
+    <li><a href="resource.html">平台资源</a></li>
+    <li><a href="team.html">团队成员</a></li>
+    <li><a href="join.html">加入我们</a></li>
+</ul>
+
+
+<!-- 团队建设/资源板块 -->
+<div class="section">
+    <h2>团队建设</h2>
+    
+    <!-- 平台资源模块 -->
+    <div class="resource-module">
+        <h3>平台资源</h3>
+        <div class="module-desc">
+            依托国家级科研体系和专业司法鉴定平台，为课题组开展科研工作、培养专业人才提供坚实的硬件支撑和实践场景。
+        </div>
+        <div class="platform-grid">
+            <!-- 资源1：国家深度事故调查体系 -->
+            <div class="platform-item">
+                <img src="image/nais.jpg" alt="国家深度事故调查体系" class="platform-img">
+                <div class="platform-text">
+                    <h4>国家深度事故调查体系</h4>
+                    <p>依托国家级道路交通事故深度调查体系，可获取全国范围内的典型事故数据、标准规范和技术指导，为课题组开展事故分析、模型构建提供权威数据源，同时参与国家级事故调查技术研讨与标准制定。</p>
+                </div>
+            </div>
+            <!-- 资源2：四川西华交通司法鉴定中心 -->
+            <div class="platform-item">
+                <img src="image/xhfc.jpg" alt="四川西华交通司法鉴定中心" class="platform-img">
+                <div class="platform-text">
+                    <h4>四川西华交通司法鉴定中心</h4>
+                    <p>该中心是经司法行政机关批准设立的专业司法鉴定机构，为课题组提供真实的事故鉴定案例、现场勘查实践机会和专业设备支持，实现科研与司法鉴定实践的深度融合。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 学术会议模块 -->
+    <div class="resource-module">
+        <h3>学术会议</h3>
+        <div class="module-desc">
+            鼓励学生参与国内外高水平学术会议，拓宽学术视野，加强与同行的交流合作，展示课题组的研究成果。
+        </div>
+        <div class="resource-img-grid grid-3">
+            <div class="img-item">
+                <img src="image/hy1.jpg" alt="学生参加全国交通安全学术年会" class="resource-img">
+                <div class="img-caption">课题组学生参加智能网联汽车生态大会</div>
+            </div>
+            <div class="img-item">
+                <img src="image/hy2.jpg" alt="学生参加智能网联汽车安全论坛" class="resource-img">
+                <div class="img-caption">课题组学生参加INFATS国际会议</div>
+            </div>
+            <div class="img-item">
+                <img src="image/hy3.jpg" alt="学生在国际交通工程会议做报告" class="resource-img">
+                <div class="img-caption">课题组学生参加ASAM中国区域大会</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 学科竞赛模块 -->
+    <div class="resource-module">
+        <h3>学科竞赛</h3>
+        <div class="module-desc">
+            组织研究生参与各类科研创新竞赛，以赛促学、以赛促研，提升学生的科研实践能力和团队协作能力。
+        </div>
+        <div class="resource-img-grid grid-3">
+            <div class="img-item">
+                <img src="image/js1.jpg" alt="研究生参加全国交通科技大赛" class="resource-img">
+                <div class="img-caption">研究生参加创新大赛</div>
+            </div>
+            <div class="img-item">
+                <img src="image/js2.jpg" alt="研究生参加研究生创新实践大赛" class="resource-img">
+                <div class="img-caption">创新大赛获国家级铜奖</div>
+            </div>
+            <div class="img-item">
+                <img src="image/js3.jpg" alt="研究生获省级科研竞赛一等奖" class="resource-img">
+                <div class="img-caption">研究生获数学建模三等奖</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 实习机会模块 -->
+    <div class="resource-module">
+        <h3>实习机会</h3>
+        <div class="module-desc">
+            为学生提供多元化的实习岗位，将理论知识与实践应用相结合，培养符合行业需求的专业人才。
+        </div>
+        <div class="resource-img-grid grid-2">
+            <div class="img-item">
+                <img src="image/sx1.jpg" alt="四川西华交通司法鉴定中心实习" class="resource-img">
+                <div class="img-caption">四川西华交通司法鉴定中心实习</div>
+            </div>
+            <div class="img-item">
+                <img src="image/sx2.jpg" alt="推荐至合作单位实习" class="resource-img">
+                <div class="img-caption">召回中心实习</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Intelligent Transportation Safety Research Group
+</footer>
+
+</body>
+</html>

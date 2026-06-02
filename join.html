@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>加入我们 - 智行安全课题组</title>
+
+    <style>
+        /* ===================== 全局页面基础样式 ===================== */
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei";
+            background: #f2f2f2;
+        }
+
+        /* ===================== 顶部 Header 区域 ===================== */
+        header {
+            position: relative;
+            background: #0b3d91;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 30px 80px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "Intelligent Transportation Safety Research Group";
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            white-space: nowrap;
+            z-index: 0;
+        }
+
+        .logo {
+            height: 90px;
+            margin-right: 25px;
+            z-index: 1;
+        }
+
+        .header-text { z-index: 1; }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header-text .en {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .header-text .cn {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        /* ===================== 导航栏 ===================== */
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: #062c6b;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu li:hover {
+            background: #041f4a;
+        }
+        
+        .menu li.active {
+            background: #041f4a;
+        }
+
+        /* ===================== 公共板块样式 ===================== */
+        .section {
+            background: white;
+            margin: 40px 80px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0b3d91;
+            font-size: 28px;
+        }
+
+        /* ===================== 加入我们模块通用样式 ===================== */
+        .join-module {
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .join-module:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .join-module h3 {
+            color: #062c6b;
+            font-size: 24px;
+            border-left: 5px solid #0b3d91;
+            padding-left: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .module-desc {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* ===================== 研究生/本科生模块样式 ===================== */
+        .recruit-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .recruit-img {
+            width: 40%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .recruit-text {
+            flex: 1;
+        }
+
+        .recruit-text ul {
+            margin: 15px 0;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .recruit-text li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background: #f8f9fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #062c6b;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+
+        /* ===================== 师兄师姐说模块样式 ===================== */
+        .senior-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .senior-card {
+            background: #f8f9fc;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .senior-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .senior-name {
+            color: #062c6b;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .senior-desc {
+            color: #555;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* ===================== 团队氛围：自动滚动照片墙（适配横竖图） ===================== */
+        .photo-box {
+            width: 100%;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .photo-slide {
+            display: flex;
+            gap: 15px;
+            width: max-content;
+            animation: autoScroll 20s linear infinite;
+        }
+        .photo-slide:hover {
+            animation-play-state: paused;
+        }
+        @keyframes autoScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .photo-item {
+            width: 280px;
+            height: 200px;
+            flex-shrink: 0;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* ===================== 页脚 ===================== */
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="image/banner4.jpg" class="logo">
+    <div class="header-text">
+        <h1>智行安全课题组</h1>
+        <div class="en">Intelligent Transportation Safety Research Group</div>
+        <div class="cn">西华大学 汽车与交通学院 道路交通安全团队</div>
+    </div>
+</header>
+
+<ul class="menu">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="research.html">科学研究</a></li>
+    <li><a href="practice.html">工程实践</a></li>
+    <li><a href="resource.html">平台资源</a></li>
+    <li><a href="team.html">团队成员</a></li>
+    <li><a href="join.html">加入我们</a></li>
+</ul>
+
+<div class="section">
+    <h2>加入我们</h2>
+    
+    <!-- 研究生模块 -->
+    <div class="join-module">
+        <h3>研究生招募</h3>
+        <div class="recruit-layout">
+            <img src="image/yjs.jpg" alt="研究生科研场景" class="recruit-img">
+            <div class="recruit-text">
+                <div class="module-desc">
+                    课题组常年招收车辆工程、交通运输工程等相关专业硕士研究生，聚焦交通事故分析、自动驾驶安全等前沿方向，为研究生提供优质的科研平台和实践机会。
+                </div>
+                <p><strong>招募要求：</strong></p>
+                <ul>
+                    <li>对交通安全、自动驾驶领域有浓厚兴趣，具备扎实的数理基础和编程能力优先；</li>
+                    <li>具备良好的文献阅读、论文写作和团队协作能力；</li>
+                    <li>能够积极参与课题组科研项目、学术会议和工程实践。</li>
+                </ul>
+                <p><strong>培养优势：</strong></p>
+                <ul>
+                    <li>参与国家级/省部级科研项目，发表高水平学术论文；</li>
+                    <li>提供司法鉴定中心、召回中心等实习平台，理论结合实践；</li>
+                    <li>推荐参加学术会议、学科竞赛，拓宽学术视野；</li>
+                    <li>提供完善的科研补贴和奖励机制。</li>
+                </ul>
+                <!-- 邮箱已修改为两行整齐排版 -->
+                <div class="contact-info">
+                    联系邮箱：<br>
+                    xhlpf12@mail.xhu.edu.cn ｜ 咨询导师：李老师<br>
+                    tanzp@mail.xhu.edu.cn    ｜ 咨询导师：谭老师
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 本科生模块 -->
+    <div class="join-module">
+        <h3>本科生招募</h3>
+        <div class="recruit-layout">
+            <img src="image/bks.jpg" alt="本科生科研实践" class="recruit-img">
+            <div class="recruit-text">
+                <div class="module-desc">
+                    面向西华大学汽车与交通学院、机械工程学院等相关专业本科生招募科研助理，提前接触科研前沿，培养科研思维和实践能力。
+                </div>
+                <p><strong>招募要求：</strong></p>
+                <ul>
+                    <li>大一-大三本科生，学习成绩良好，对道路交通安全领域有兴趣；</li>
+                    <li>具备基本的办公软件使用能力，有编程/数据分析基础优先；</li>
+                    <li>做事认真负责，能够保证固定的科研参与时间。</li>
+                </ul>
+                <p><strong>培养优势：</strong></p>
+                <ul>
+                    <li>参与课题组科研项目，积累科研经验；</li>
+                    <li>由导师一对一指导，提供毕业论文选题和写作指导；</li>
+                    <li>推荐参加学科竞赛、大学生创新创业项目；</li>
+                    <li>提供实习证明和保研/就业推荐机会；</li>
+		    <li>提供完善的科研补贴和奖励机制。</li>
+                </ul>
+                <div class="contact-info">
+                    报名方式：发送个人简历至1195393083@qq.com | 长期有效
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 师兄师姐说模块 -->
+    <div class="join-module">
+        <h3>师兄师姐说</h3>
+        <div class="module-desc">
+            听听课题组的师兄师姐们分享在团队的科研和成长经历：
+        </div>
+        <div class="senior-cards">
+            <div class="senior-card">
+                <div class="senior-name">张同学</div>
+                <div class="senior-desc">
+                    "我常常怀念研究生的日子，虽然过的很辛苦，但是有那帮兄弟姐妹在，那段激情燃烧的岁月是我这一生都难以忘记的。"
+                </div>
+            </div>
+            <div class="senior-card">
+                <div class="senior-name">王同学</div>
+                <div class="senior-desc">
+                    "研究生期间能找到志同道合的兄弟一起搞研究，吃的苦熬的夜都值得。"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 团队氛围：自动滚动照片墙 -->
+    <div class="join-module">
+        <h3>团队氛围</h3>
+        <div class="module-desc">
+            课题组注重学术交流与团队凝聚力建设，营造轻松、互助、向上的团队氛围：
+        </div>
+
+        <div class="photo-box">
+            <div class="photo-slide">
+                <!-- 原图 -->
+                <div class="photo-item"><img src="image/td1.jpg"></div>
+                <div class="photo-item"><img src="image/td2.jpg"></div>
+                <div class="photo-item"><img src="image/td3.jpg"></div>
+                <div class="photo-item"><img src="image/td4.jpg"></div>
+                <div class="photo-item"><img src="image/td5.jpg"></div>
+                <div class="photo-item"><img src="image/td6.jpg"></div>
+                <div class="photo-item"><img src="image/td7.jpg"></div>
+                <div class="photo-item"><img src="image/td8.jpg"></div>
+                <div class="photo-item"><img src="image/td9.jpg"></div>
+                <div class="photo-item"><img src="image/td10.jpg"></div>
+                <div class="photo-item"><img src="image/td11.jpg"></div>
+                <div class="photo-item"><img src="image/td12.jpg"></div>
+                <div class="photo-item"><img src="image/td13.jpg"></div>
+                <div class="photo-item"><img src="image/td14.jpg"></div>
+                <div class="photo-item"><img src="image/td15.jpg"></div>
+                <div class="photo-item"><img src="image/td16.jpg"></div>
+                <div class="photo-item"><img src="image/td17.jpg"></div>
+                <div class="photo-item"><img src="image/td18.jpg"></div>
+                <div class="photo-item"><img src="image/td19.jpg"></div>
+                <div class="photo-item"><img src="image/td20.jpg"></div>
+                <!-- 复制一遍实现无缝滚动 -->
+                <div class="photo-item"><img src="image/td1.jpg"></div>
+                <div class="photo-item"><img src="image/td2.jpg"></div>
+                <div class="photo-item"><img src="image/td3.jpg"></div>
+                <div class="photo-item"><img src="image/td4.jpg"></div>
+                <div class="photo-item"><img src="image/td5.jpg"></div>
+                <div class="photo-item"><img src="image/td6.jpg"></div>
+                <div class="photo-item"><img src="image/td7.jpg"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Intelligent Transportation Safety Research Group
+</footer>
+
+</body>
+</html>

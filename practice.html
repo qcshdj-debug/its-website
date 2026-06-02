@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>工程实践 - 智行安全课题组</title>
+
+    <style>
+        /* ===================== 全局页面基础样式 ===================== */
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei";
+            background: #f2f2f2;
+        }
+
+        /* ===================== 顶部 Header 区域 ===================== */
+        header {
+            position: relative;
+            background: #0b3d91;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 30px 80px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "Intelligent Transportation Safety Research Group";
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            white-space: nowrap;
+            z-index: 0;
+        }
+
+        .logo {
+            height: 90px;
+            margin-right: 25px;
+            z-index: 1;
+        }
+
+        .header-text { z-index: 1; }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header-text .en {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .header-text .cn {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        /* ===================== 导航栏 ===================== */
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: #062c6b;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu li:hover {
+            background: #041f4a;
+        }
+        
+        /* 高亮当前页面导航 */
+        .menu li.active {
+            background: #041f4a;
+        }
+
+        /* ===================== 公共板块样式 ===================== */
+        .section {
+            background: white;
+            margin: 40px 80px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0b3d91;
+            font-size: 28px;
+        }
+
+        /* ===================== 工程实践模块样式 ===================== */
+        .practice-module {
+            margin-bottom: 60px;
+        }
+        
+        .practice-module:last-child {
+            margin-bottom: 0;
+        }
+
+        .practice-module h3 {
+            color: #062c6b;
+            font-size: 24px;
+            border-left: 5px solid #0b3d91;
+            padding-left: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .module-desc {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* 图片网格布局 */
+        .practice-img-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .img-item {
+            text-align: center;
+        }
+
+        .practice-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .practice-img:hover {
+            transform: translateY(-5px);
+        }
+
+        .img-caption {
+            margin-top: 12px;
+            font-size: 15px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* ===================== 页脚 ===================== */
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="image/banner4.jpg" class="logo">
+    <div class="header-text">
+        <h1>智行安全课题组</h1>
+        <div class="en">Intelligent Transportation Safety Research Group</div>
+        <div class="cn">西华大学 汽车与交通学院 道路交通安全团队</div>
+    </div>
+</header>
+
+<ul class="menu">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="research.html">科学研究</a></li>
+    <li><a href="practice.html">工程实践</a></li>
+    <li><a href="resource.html">平台资源</a></li>
+    <li><a href="team.html">团队成员</a></li>
+    <li><a href="join.html">加入我们</a></li>
+</ul>
+
+
+<!-- 工程实践板块 -->
+<div class="section">
+    <h2>工程实践</h2>
+    
+    <!-- 事故调查模块 -->
+    <div class="practice-module">
+        <h3>事故调查</h3>
+        <div class="module-desc">
+            依托专业的事故勘查设备和多年的实践经验，为司法机关、车企、保险机构等提供专业的交通事故调查服务，涵盖火灾、落水、坠崖等复杂场景的事故成因分析与责任认定，形成科学、严谨的调查结论。
+        </div>
+        <div class="practice-img-grid">
+            <div class="img-item">
+                <img src="image/xiaomi.jpg" alt="某车火灾事故调查" class="practice-img">
+                <div class="img-caption">某品牌轿车火灾事故</div>
+            </div>
+            <div class="img-item">
+                <img src="image/pra2.jpg" alt="某车落水事故调查" class="practice-img">
+                <div class="img-caption">阿坝落水事故</div>
+            </div>
+            <div class="img-item">
+                <img src="image/pra3.jpg" alt="某车坠崖事故调查" class="practice-img">
+                <div class="img-caption">某车坠楼事故调查</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自动驾驶开发模块 -->
+    <div class="practice-module">
+        <h3>自动驾驶开发</h3>
+        <div class="module-desc">
+            为自动驾驶企业提供全流程的开发测试技术支撑，覆盖MIL（模型在环）、SIL（软件在环）、HIL（硬件在环）等多阶段测试验证，助力自动驾驶算法优化、系统集成与功能安全验证，加速技术落地进程。
+        </div>
+        <div class="practice-img-grid">
+            <div class="img-item">
+                <img src="image/mil.png" alt="MIL模型在环测试" class="practice-img">
+                <div class="img-caption">MIL模型在环测试</div>
+            </div>
+            <div class="img-item">
+                <img src="image/pra5.gif" alt="SIL软件在环测试" class="practice-img">
+                <div class="img-caption">SIL软件在环测试</div>
+            </div>
+            <div class="img-item">
+                <img src="image/pra6.gif" alt="HIL硬件在环测试" class="practice-img">
+                <div class="img-caption">HIL硬件在环测试</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 实车测评模块 -->
+    <div class="practice-module">
+        <h3>实车测评</h3>
+        <div class="module-desc">
+            在国家认可的封闭试验场内开展自动驾驶车辆、传统车辆的实车测评工作，依据国家标准和企业定制化需求，完成车辆安全性能、自动驾驶功能、极端场景应对能力等多维度测试，出具专业的测评报告。
+        </div>
+        <div class="practice-img-grid">
+            <div class="img-item">
+                <img src="image/pra7.gif" alt="某封闭试验场实车测试" class="practice-img">
+                <div class="img-caption">某车型一般法规场景测试</div>
+            </div>
+            <div class="img-item">
+                <img src="image/test.gif" alt="某封闭试验场实车测试" class="practice-img">
+                <div class="img-caption">某车型雨天场景测试</div>
+            </div>
+            <div class="img-item">
+                <img src="image/mb.jpg" alt="某封闭试验场实车测试" class="practice-img">
+                <div class="img-caption">漠河“极北寒测”电动汽车电池续航测试</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Intelligent Transportation Safety Research Group
+</footer>
+
+</body>
+</html>
